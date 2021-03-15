@@ -10,11 +10,9 @@ import './styles/Styles.scss'
 
 const App = () => {
   return (
-      <BrowserRouter>
-          <>
-              <Main />
-          </>
-      </BrowserRouter>
+    <BrowserRouter>
+        <Main />
+    </BrowserRouter>
   );
 }
 

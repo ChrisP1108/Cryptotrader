@@ -19,7 +19,6 @@ const Header = () => {
     const handleLogin = (event) => {
         alert(`Username: ${event.username.value} Password: ${event.password.value} Remember: ${event.remember.checked}`);
         toggleModal();
-        event.preventDefault();
     }
 
     return (
@@ -31,16 +30,16 @@ const Header = () => {
                     <Collapse isOpen={isNavOpen} navbar>
                         <Nav navbar className="ml-auto text-center">
                             <NavItem>
-                                <NavLink className="nav-link navstyle" to="/home">HOME</NavLink>
+                                <NavLink activeClassName="navactive" className="nav-link navstyle" to="/home">HOME</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link navstyle ml-md-3 ml-lg-5" to="/software">SOFTWARE</NavLink>
+                                <NavLink activeClassName="navactive" className="nav-link navstyle ml-md-3 ml-lg-5" to="/software">SOFTWARE</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link navstyle ml-md-3 ml-lg-5" to="/about">ABOUT</NavLink>
+                                <NavLink activeClassName="navactive" className="nav-link navstyle ml-md-3 ml-lg-5" to="/about">ABOUT</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link navstyle ml-md-3 ml-lg-5" to="/contactus">CONTACT US</NavLink>
+                                <NavLink activeClassName="navactive" className="nav-link navstyle ml-md-3 ml-lg-5" to="/contactus">CONTACT US</NavLink>
                             </NavItem>
                         </Nav>
                         <span className="navbar-text mx-auto d-flex justify-content-center">
