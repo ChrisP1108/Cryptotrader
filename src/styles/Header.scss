@@ -1,10 +1,4 @@
 #header {
-    .navtitle {
-        background: -webkit-linear-gradient($midGray, $red);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 2rem;
-    }
 
     .headerbackground {
         background: $blackGray;
@@ -18,10 +12,6 @@
     .navstyle {
         color: $midGray;
         font-size: 1.15rem;  
-    }
-
-    .navactive {
-        color: $brightGray;
     }
 
     .navbar-toggler-icon {
