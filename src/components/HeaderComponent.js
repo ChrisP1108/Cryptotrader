@@ -43,9 +43,9 @@ const Header = () => {
                                 <NavLink className="nav-link navstyle ml-md-3 ml-lg-5" to="/contactus">CONTACT US</NavLink>
                             </NavItem>
                         </Nav>
-                        <span className="navbar-text mx-auto">
+                        <span className="navbar-text mx-auto d-flex justify-content-center">
                             <Button outline onClick={toggleModal}>
-                                Login
+                                LOGIN
                             </Button>
                         </span>
                     </Collapse>

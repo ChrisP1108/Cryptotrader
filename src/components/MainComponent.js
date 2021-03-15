@@ -1,8 +1,5 @@
 import Header from './HeaderComponent';
-// import Footer from './FooterComponent';
-// import Home from './HomeComponent';
-// import About from './AboutComponent';
-// import Contact from './ContactComponent';
+import Footer from './FooterComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -10,7 +7,7 @@ const Main = () => {
     return (
         <>
             <Header />
-            <h1>Cryptotrader Test</h1>
+            <Footer />
         </>
     )
 }
