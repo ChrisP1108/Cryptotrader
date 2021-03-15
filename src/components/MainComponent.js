@@ -1,4 +1,4 @@
-// import Header from './HeaderComponent';
+import Header from './HeaderComponent';
 // import Footer from './FooterComponent';
 // import Home from './HomeComponent';
 // import About from './AboutComponent';
@@ -8,7 +8,10 @@ import { connect } from 'react-redux';
 
 const Main = () => {
     return (
-        <h1>Cryptotrader Test</h1>
+        <>
+            <Header />
+            <h1>Cryptotrader Test</h1>
+        </>
     )
 }
 

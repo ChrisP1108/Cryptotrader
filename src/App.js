@@ -4,6 +4,7 @@ import { BrowserRouter } from'react-router-dom';
 import { Provider } from 'react-redux';
 // import { ConfigureStore } from './redux/configureStore';
 import './App.css';
+import './styles/Styles.scss'
 
 // const store = ConfigureStore();
 
