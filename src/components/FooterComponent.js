@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="container">
                     <Nav navbar className="col-sm-2">
                         <NavItem>
-                            <NavLink activeClassName="navactive" className="nav-link navstyle ml-md-3 ml-lg-5 mx-auto text-center mb-4 mb-sm-0" to="/about">ABOUT</NavLink>
+                            <NavLink className="nav-link navstyle ml-md-3 ml-lg-5 mx-auto text-center mb-4 mb-sm-0" to="/about">ABOUT</NavLink>
                         </NavItem>
                     </Nav>
                     <div className="col-sm-8 d-flex justify-content-center">
@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     <Nav navbar className="col-sm-2">
                         <NavItem>
-                            <NavLink activeClassName="navactive" className="nav-link navstyle ml-md-3 ml-lg-5 mx-auto text-center mt-4 mt-sm-0" to="/contactus">CONTACT US</NavLink>
+                            <NavLink className="nav-link navstyle ml-md-3 ml-lg-5 mx-auto text-center mt-4 mt-sm-0" to="/contactus">CONTACT US</NavLink>
                         </NavItem>
                     </Nav>                 
                 </div>
