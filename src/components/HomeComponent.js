@@ -6,15 +6,15 @@ const Home = ({ homecontent }) => {
     const homesections = homecontent.map(section => {
         return (            
             <div key={section.id} className="row section-overlay pt-4 pb-4 ml-4 mr-5">
-                <div className={section.inverted ? 'col my-auto order-md-last' : 'col my-auto order-md-first'}>
-                    <img src={section.img} width="550" height ="350" />
+                <div className={section.inverted ? 'col-12 col-lg-6 my-auto order-lg-last' : 'col-12 col-lg-6 my-auto order-lg-first'}>
+                    <img className="imgtag" src={section.img} alt={section.name} />
                 </div>
-                <div className="col my-auto">
-                    <h1 className="mb-5">{section.heading}</h1>
+                <div className="col-12 col-lg-6 my-auto">
+                    <h1 className="mb-5 mt-4 mt-lg-0">{section.heading}</h1>
                     <h5 className="mb-5">{section.content1}</h5>
                     <h5 className="mt-5">{section.content2}</h5>
                     <Link to={section.link}>
-                        <button className="mt-5">{section.button}</button>
+                        <button className="mt-3 mb-1">{section.button}</button>
                     </Link>
                 </div>
             </div>
