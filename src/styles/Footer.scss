@@ -1,0 +1,26 @@
+#footer {
+    .footerbackground {
+        background: $blackGray;
+    }
+
+    a:hover {
+        transition: .3s;
+        color: $brightGray;
+    }
+
+    .navstyle {
+        color: $midGray;
+        font-size: 1.15rem;  
+    }
+
+    .navactive {
+        color: $brightGray;
+    }
+
+    .sociallink {
+        background-color: $grayRed;
+
+    }
+
+   
+}
