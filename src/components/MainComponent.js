@@ -11,13 +11,13 @@ import { connect } from 'react-redux';
 
 const Main = () => {
 
-    const [homePageContent, setHomePageContent] = useState(HOMEPAGECONTENTS);
+    const [homeContent, setHomeContent] = useState(HOMEPAGECONTENTS);
 
     return (
         <>
             <Header />
             <Switch>
-                    <Route path='/home' render={() => <Home homePageContent={homePageContent[0]} />} />
+                    <Route path='/home' render={() => <Home homecontent={homeContent} />} />
                     <Route exact path='/software' component={Software} />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contactus' component={ContactUs} />
