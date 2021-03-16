@@ -10,19 +10,21 @@
             $blackGray: hsl(0, 0%, 18%);
             $black: hsl(0, 0%, 0%);
     // Trans Grays 
-            $lightGrayTrans: hsl(0, 0%, 73%);
-            $grayTrans: hsl(0, 0%, 37%);
-            $blackGrayTrans: hsl(0, 0%, 18%);
-            $blackTrans: hsl(0, 0%, 0%);
+            $lightGrayTrans: hsla(0, 0%, 73%, .2);
+            $grayTrans: hsla(0, 0%, 37%, .2);
+            $grayTransButton: hsla(0, 0%, 7%, 0.8);
+            $blackGrayTrans: hsla(0, 0%, 18%, .2);
+            $blackTransImage: hsla(0, 0%, 0%, .5);
     // Solid Reds 
             $red: hsl(0, 100%, 50%);
             $redGray: hsl(0, 70%, 50%);
             $grayRed: hsl(0, 50%, 50%);
             $darkRed: hsl(0, 70%, 28%);
     // Trans Reds 
-            $redTrans: hsl(0, 100%, 50%);
-            $redGrayTrans: hsl(0, 70%, 50%);
-            $grayRedTrans: hsl(0, 50%, 50%);
+            $redTrans: hsla(0, 100%, 50%, .5);
+            $redGrayTrans: hsla(0, 70%, 50%, .5);
+            $grayRedTrans: hsla(0, 50%, 50%, .5);
+            $darkGrayRedTrans: rgba(95, 11, 11, 0.5);
 
 // Fonts
         $font-main: fantasy, sans-serif;
