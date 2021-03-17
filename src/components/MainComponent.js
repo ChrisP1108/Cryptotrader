@@ -5,6 +5,7 @@ import Software from './SoftwareComponent';
 import About from './AboutComponent';
 import ContactUs from './ContactUsComponent';
 import { HOMEPAGECONTENTS } from '../shared/Homepagecontents';
+import { SOFTWAREPAGECONTENTS } from '../shared/SoftwarePageContents';
 import { useState } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -12,13 +13,15 @@ import { connect } from 'react-redux';
 const Main = () => {
 
     const [homePageContent, setHomePageContent] = useState(HOMEPAGECONTENTS);
+    const [softwarePageContent, setSoftwarePageContent] = useState(SOFTWAREPAGECONTENTS);
 
     return (
         <>
             <Header />
             <Switch>
                     <Route path='/home' render={() => <Home homePageContent={homePageContent[0]} />} />
-                    <Route exact path='/software' component={Software} />
+                    <Route path='/software' render={() => <Software softwarePageContent={softwarePageContent[0]} />} />
+                    {/* <Route exact path='/software' component={Software} /> */}
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contactus' component={ContactUs} />
                     <Redirect to='/home' />
