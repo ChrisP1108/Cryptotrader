@@ -19,9 +19,9 @@ const Main = () => {
         <>
             <Header />
             <Switch>
+
                     <Route path='/home' render={() => <Home homePageContent={homePageContent[0]} />} />
                     <Route path='/software' render={() => <Software softwarePageContent={softwarePageContent[0]} />} />
-                    {/* <Route exact path='/software' component={Software} /> */}
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contactus' component={ContactUs} />
                     <Redirect to='/home' />
