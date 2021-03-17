@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Software = ({ softwarePageContent }) => {
+const Software = ({ softwarepagecontent }) => {
 
-  const SoftwareContent = () => {
-
-            return (
+    const SoftwareContent = () => {
+        return (
             <div className="row section-overlay pt-4 pb-4 ml-4 mr-5">
                 <div className="col my-auto">
-                    <img src={softwarePageContent.img} width="550" height ="350" />
+                    <img src={softwarepagecontent.img} width="550" height ="350" />
                 </div>
                 <div className="col my-auto">
-                    <h1 className="mb-5">{softwarePageContent.heading}</h1>
-                    <h5 className="mb-5">{softwarePageContent.content1}</h5>
-                    <h5 className="mt-5">{softwarePageContent.content2}</h5>
-                    <Link to={softwarePageContent.link}>
-                        <button className="mt-5">{softwarePageContent.button}</button>
+                    <h1 className="mb-5">{softwarepagecontent.heading}</h1>
+                    <h5 className="mb-5">{softwarepagecontent.content1}</h5>
+                    <h5 className="mt-5">{softwarepagecontent.content2}</h5>
+                    <Link to={softwarepagecontent.link}>
+                        <button className="mt-5">{softwarepagecontent.button}</button>
                     </Link>  
                 </div>
             </div>

@@ -4,7 +4,7 @@ import Home from './HomeComponent';
 import Software from './SoftwareComponent';
 import About from './AboutComponent';
 import ContactUs from './ContactUsComponent';
-import { HOMEPAGECONTENTS } from '../shared/Homepagecontents';
+import { HOMEPAGECONTENTS } from '../shared/HomePageContents';
 import { SOFTWAREPAGECONTENTS } from '../shared/SoftwarePageContents';
 import { useState } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
@@ -19,9 +19,8 @@ const Main = () => {
         <>
             <Header />
             <Switch>
-
-                    <Route path='/home' render={() => <Home homePageContent={homePageContent[0]} />} />
-                    <Route path='/software' render={() => <Software softwarePageContent={softwarePageContent[0]} />} />
+                    <Route path='/home' render={() => <Home homepagecontent={homePageContent} />} />
+                    <Route path='/software' render={() => <Software softwarepagecontent={softwarePageContent[0]} />} />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contactus' component={ContactUs} />
                     <Redirect to='/home' />

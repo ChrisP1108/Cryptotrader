@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-const Home = ({ homecontent }) => {
+const Home = ({ homepagecontent }) => {
 
-    const homesections = homecontent.map(section => {
+    const homesections = homepagecontent.map(section => {
         return (            
             <div key={section.id} className="row section-overlay pt-4 pb-4 ml-4 mr-5">
                 <div className={section.inverted ? 'col-12 col-lg-6 my-auto order-lg-last' : 'col-12 col-lg-6 my-auto order-lg-first'}>
