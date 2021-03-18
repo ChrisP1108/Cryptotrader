@@ -7,6 +7,11 @@ const Header = () => {
 
     const [isNavOpen, setNavOpen] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
+    const [loginModal, setLoginModal] = useState({
+        username: '',
+        password: '',
+        remember: false
+    });
 
     const toggleNav = () => {
         setNavOpen(!isNavOpen);
@@ -16,15 +21,21 @@ const Header = () => {
         setModalOpen(!isModalOpen);
     }
 
+    const handleInputChange = (e) => {
+        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        setLoginModal({...loginModal, [e.target.name]: value});
+
+    }
+
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log(e.username);
-        if (e === null) {
-            alert(`Please enter all fields before clicking login.`);
-            return;
-        }
-        alert(`Username: ${e.username} Password: ${e.password} Remember: ${e.remember}`);
+        alert(`Username: ${loginModal.username} Password: ${loginModal.password} Remember: ${loginModal.remember}`);
         toggleModal();
+        setLoginModal({
+            username: '',
+            password: '',
+            remember: false
+        })
     }
 
     return (
@@ -63,21 +74,27 @@ const Header = () => {
                         <FormGroup>
                             <Label htmlFor="username" className="brightgraytext">Username</Label>
                             <Input type="text" id="username" name="username" 
-                                innerRef={input => input.username = input} />
+                                value={loginModal.username} 
+                                onChange={handleInputChange}
+                            />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="password" className="brightgraytext">Password</Label>
                             <Input type="password" id="password" name="password" 
-                                innerRef={input => input.password = input} />
+                                value={loginModal.password} 
+                                onChange={handleInputChange}
+                            />
                         </FormGroup>
                         <FormGroup check>
                             <Label check className="brightgraytext">
                                 <Input type="checkbox" name="remember"
-                                    innerRef={input => input.remember = input} />
+                                    value={loginModal.remember} 
+                                    onChange={handleInputChange}
+                                />
                                 Remember me
                             </Label>
                         </FormGroup>
-                        <Button type="submit" value="submit" color="primary" className="mt-3">Login</Button>
+                        <button type="submit" value="submit" color="primary" className="mt-3">Login</button>
                     </Form>
                 </ModalBody>
             </Modal>
