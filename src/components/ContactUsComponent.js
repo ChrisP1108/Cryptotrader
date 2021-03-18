@@ -30,18 +30,15 @@ const ContactUs = ({ contactuspagecontent }) => {
     }
 
     const handleInputChange = (e) => {
-        const target = e.target;
-        const name = target.name;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-    
-        setForm({
-            [name]: value
-        });
+        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        setForm({...form, [e.target.name]: value});
+        console.log(form);
+
     }
 
     const handleSubmit = (e) => {
-        console.log('Current state is: ' + JSON.stringify(this.state));
-        alert('Current state is: ' + JSON.stringify(this.state));
+        console.log('Current state is: ' + JSON.stringify(form));
+        alert('Current state is: ' + JSON.stringify(form));
         e.preventDefault();
     }
 
@@ -58,7 +55,8 @@ const ContactUs = ({ contactuspagecontent }) => {
                                         <Input type="text" id="firstName" name="firstName"
                                             placeholder="First Name"
                                             value={form.firstName}
-                                            onChange={handleInputChange} />
+                                            onChange={handleInputChange} 
+                                            />
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
@@ -110,7 +108,7 @@ const ContactUs = ({ contactuspagecontent }) => {
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
-                                    <Label htmlFor="feedback" md={2}>Your Feedback</Label>
+                                    <Label htmlFor="feedback" md={2}>Feedback</Label>
                                     <Col md={10}>
                                         <Input type="textarea" id="feedback" name="feedback"
                                             rows="12"
