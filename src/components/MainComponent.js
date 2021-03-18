@@ -4,7 +4,7 @@ import Home from './HomeComponent';
 import Software from './SoftwareComponent';
 import About from './AboutComponent';
 import ContactUs from './ContactUsComponent';
-import { HOMEPAGECONTENTS } from '../shared/HomePageContents';
+import { HOMEPAGECONTENTS } from '../shared/Homepagecontents';
 import { SOFTWAREPAGECONTENTS } from '../shared/SoftwarePageContents';
 import { CONTACTPAGECONTENTS } from '../shared/ContactPageContents'
 import { useState } from 'react';
