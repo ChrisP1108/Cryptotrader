@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 
 const ContactUs = ({ contactuspagecontent }) => {
 
-    const [form, setForm] = useState({
+    const formReset = {
         firstName: '',
         lastName: '',
         phoneNum: '',
@@ -11,7 +11,9 @@ const ContactUs = ({ contactuspagecontent }) => {
         agree: false,
         contactType: 'By Phone',
         feedback: ''
-    });
+    };
+
+    const [form, setForm] = useState(formReset);
 
     const ContactUsHeading = () => {
         return (
@@ -37,9 +39,10 @@ const ContactUs = ({ contactuspagecontent }) => {
     }
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         console.log('Current state is: ' + JSON.stringify(form));
         alert('Current state is: ' + JSON.stringify(form));
-        e.preventDefault();
+        setForm(formReset);
     }
 
     const ContactUsForm = () => {
