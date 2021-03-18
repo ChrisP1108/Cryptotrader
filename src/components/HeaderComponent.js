@@ -7,11 +7,14 @@ const Header = () => {
 
     const [isNavOpen, setNavOpen] = useState(false);
     const [isModalOpen, setModalOpen] = useState(false);
-    const [loginModal, setLoginModal] = useState({
+    
+    const loginModalReset = {
         username: '',
         password: '',
         remember: false
-    });
+    };
+    
+    const [loginModal, setLoginModal] = useState(loginModalReset);
 
     const toggleNav = () => {
         setNavOpen(!isNavOpen);
@@ -31,11 +34,7 @@ const Header = () => {
         e.preventDefault();
         alert(`Username: ${loginModal.username} Password: ${loginModal.password} Remember: ${loginModal.remember}`);
         toggleModal();
-        setLoginModal({
-            username: '',
-            password: '',
-            remember: false
-        })
+        setLoginModal(loginModalReset);
     }
 
     return (
