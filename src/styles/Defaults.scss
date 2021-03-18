@@ -56,3 +56,27 @@ button {
 button:hover {
     background-color: $gray;
 }
+
+.graybackground {
+    background-color: $gray;
+}
+
+.lightgraybackground {
+    background-color: $lightGray;
+}
+
+.darkgraybackground {
+    background-color: $darkGray;
+}
+
+.brightgraytext {
+    color: $brightGray;
+}
+
+.darkgraytext {
+    color: $darkGray
+}
+
+.darkredbackground {
+    background: $darkGrayRedTrans
+}
