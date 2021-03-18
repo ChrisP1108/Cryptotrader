@@ -16,9 +16,15 @@ const About = ({ aboutpagecontent }) => {
                     <h5 className="mb-5 mt-5">{aboutpagecontent.content1}</h5>
                     <h5 className="mt-5">{aboutpagecontent.content2}</h5>
                     <h5 className="mt-5">{aboutpagecontent.content3}</h5>
-                    <Link to={aboutpagecontent.link}>
-                        <button className="mt-5">{aboutpagecontent.button}</button>
-                    </Link>  
+                    <Link to={aboutpagecontent.link1}>
+                        <button className="mt-5 mr-2">{aboutpagecontent.button1}</button>
+                    </Link>
+                    <Link to={aboutpagecontent.link2}>
+                        <button className="mt-5 mr-2">{aboutpagecontent.button2}</button>
+                    </Link>
+                    <Link to={aboutpagecontent.link3}>
+                        <button className="mt-5">{aboutpagecontent.button3}</button>
+                    </Link>
                 </div>
             </div>
         )
