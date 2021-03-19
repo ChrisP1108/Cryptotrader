@@ -1,19 +1,7 @@
-import { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import { useForm } from 'react-hook-form';
+import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
 
 const ContactUs = ({ contactuspagecontent }) => {
-
-    const formReset = {
-        firstName: '',
-        lastName: '',
-        phoneNum: '',
-        email: '',
-        agree: false,
-        contactType: 'By Phone',
-        feedback: ''
-    };
-
-    const [form, setForm] = useState(formReset);
 
     const ContactUsHeading = () => {
         return (
@@ -31,18 +19,18 @@ const ContactUs = ({ contactuspagecontent }) => {
         )
     }
 
-    const handleInputChange = (e) => {
-        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
-        setForm({...form, [e.target.name]: value});
-        console.log(form);
+    const formDefault = {
+        agree: false,
+        contactType: 'By Phone',
+    };
 
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Current state is: ' + JSON.stringify(form));
-        alert('Current state is: ' + JSON.stringify(form));
-        setForm(formReset);
+    const { register, handleSubmit, errors } = useForm(formDefault);
+    
+    const onSubmit = (data) => {
+        const output = JSON.stringify(data);
+        console.log(output);
+        alert(output);
+        console.log(data);
     }
 
     const ContactUsForm = () => {
@@ -51,83 +39,86 @@ const ContactUs = ({ contactuspagecontent }) => {
                 <div className="container">
                     <div className="row row-content">
                         <div className="col-md-10 mx-auto">
-                            <Form onSubmit={handleSubmit}>
-                                <FormGroup row>
-                                    <Label htmlFor="firstName" md={2}>First Name</Label>
-                                    <Col md={10}>
-                                        <Input type="text" id="firstName" name="firstName"
-                                            placeholder="First Name"
-                                            value={form.firstName}
-                                            onChange={handleInputChange} 
-                                            />
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                    <Col md={10}>
-                                        <Input type="text" id="lastName" name="lastName"
-                                            placeholder="Last Name"
-                                            value={form.lastName}
-                                            onChange={handleInputChange} />
-                                    </Col>                        
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="phoneNum" md={2}>Phone</Label>
-                                    <Col md={10}>
-                                        <Input type="tel" id="phoneNum" name="phoneNum"
-                                            placeholder="Phone number"
-                                            value={form.phoneNum}
-                                            onChange={handleInputChange} />
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="email" md={2}>Email</Label>
-                                    <Col md={10}>
-                                        <Input type="email" id="email" name="email"
-                                            placeholder="Email"
-                                            value={form.email}
-                                            onChange={handleInputChange} />
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md={{size: 4, offset: 2}} className="my-auto">
-                                        <FormGroup check>
-                                            <Label check>
-                                                <Input type="checkbox"
+                            <form className="form">
+                                <div className="form-group row">
+                                    <div className="col-12 offset-md-1">
+                                        {errors.firstName && <p>First Name Must Be Between 1 And 15 Characters.</p>}
+                                    </div>
+                                    <label htmlFor="firstName" className="col-md-2">First Name</label>
+                                    <input type="text" id="firstName" className ="col-10 mx-auto form-control" name="firstName"
+                                        placeholder="First Name"
+                                        ref={register({required: true, minLength: 1, maxLength: 20})}
+                                    />                                   
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-12 mt-3 offset-md-1">
+                                        {errors.lastName && <p>Last Name Must Be Between 1 And 15 Characters.</p>}
+                                    </div> 
+                                    <label htmlFor="lastName" className="col-md-2">Last Name</label>
+                                    <input type="text" id="lastName" className ="col-10 mx-auto form-control" name="lastName"
+                                        placeholder="Last Name"
+                                        ref={register({required: true, minLength: 1, maxLength: 20})} 
+                                    />                      
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-12 mt-3 offset-md-1">
+                                        {errors.phoneNum && <p>Phone Number Must Be 10 Characters Long.</p>}
+                                    </div> 
+                                    <label htmlFor="phoneNum" className="col-md-2">Phone</label>
+                                    <input type="tel" id="phoneNum" className ="col-10 mx-auto form-control" name="phoneNum"
+                                        placeholder="Phone number"
+                                        ref={register({required: true, minLength: 10, maxLength: 10})}
+                                    />
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-12 mt-3 offset-md-1">
+                                        {errors.email && <p>Enter A Valid Email Address.</p>}
+                                    </div> 
+                                    <label htmlFor="email" className="col-md-2">Email</label>
+                                    <input type="text" id="email" className ="col-10 mx-auto form-control mb-3" name="email"
+                                        placeholder="Email"
+                                        ref={register({required: true, pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i} })}
+                                    />
+                                </div>
+                                <div className="form-group row">
+                                    <div className="my-auto col-md-4 mx-auto">
+                                        <div className="form-group row check">
+                                            <div className="form-check-label">
+                                                <input type="checkbox"
                                                     name="agree"
-                                                    checked={form.agree}
-                                                    onChange={handleInputChange} /> {' '}
-                                                <strong>May we contact you?</strong>
-                                            </Label>
-                                        </FormGroup>
-                                    </Col>
-                                    <Col md={4}>
-                                        <Input type="select" name="contactType"
-                                                value={form.contactType}
-                                                onChange={handleInputChange}>
+                                                    ref={register}
+                                                    className="form-control-check"
+                                                />
+                                                <strong> May we contact you?</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-4 mt-4 mt-md-0">
+                                        <select name="contactType"
+                                                ref={register}>
                                             <option>By Phone</option>
                                             <option>By Email</option>
-                                        </Input>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="feedback" md={2}>Feedback</Label>
-                                    <Col md={10}>
-                                        <Input type="textarea" id="feedback" name="feedback"
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-12 mt-3 offset-md-1">
+                                        {errors.feedback && <p>Enter FeedBack.</p>}
+                                    </div> 
+                                    <label htmlFor="feedback" className="col-md-2">Feedback</label>
+                                        <textarea id="feedback" className ="col-10 mx-auto form-control" name="feedback"
                                             rows="12"
-                                            value={form.feedback}
-                                            onChange={handleInputChange}>
-                                        </Input>
-                                    </Col>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Col md={{size: 10, offset: 2}} className="mx-auto mt-3">
-                                        <button type="submit">
+                                            ref={register({required: true, minLength: 1, maxLength: 1000})}
+                                        />
+                                </div>
+                                <div className="form-group row">
+                                    <div className="col-md-10 offset-md-2 mx-auto mt-3">
+                                        <button onClick={handleSubmit(onSubmit)}>
                                             Submit
                                         </button>
-                                    </Col>
-                                </FormGroup>
-                            </Form>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

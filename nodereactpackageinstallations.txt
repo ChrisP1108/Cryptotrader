@@ -1,0 +1,18 @@
+If Yarn is not installed:
+
+npm install -g yarn
+
+Install packages in order:
+
+npx create-react-app@3.4.1 (**Project Folder Name**)
+yarn add reactstrap@8.5.1
+yarn add react-popper@1.3.6
+yarn add bootstrap@4.5.2
+yarn add font-awesome@4.7.0
+yarn add bootstrap-social@5.1.1
+yarn add react-router-dom@5.2.0
+yarn add redux@4.0.5
+yarn add react-redux@7.2.0
+yarn add react-redux-form@1.16.14
+yarn add node-sass
+yarn add react-hook-form
