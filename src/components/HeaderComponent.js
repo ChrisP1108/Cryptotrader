@@ -32,7 +32,15 @@ const Header = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        alert(`Username: ${loginModal.username} Password: ${loginModal.password} Remember: ${loginModal.remember}`);
+        if (loginModal.username === '') {
+            alert('Please enter a username');
+            return;
+        }
+        if (loginModal.password === '') {
+            alert('Please enter a password');
+            return;
+        }
+        alert('Current state is: ' + JSON.stringify(loginModal));
         toggleModal();
         setLoginModal(loginModalReset);
     }
