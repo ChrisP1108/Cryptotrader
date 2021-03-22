@@ -19,16 +19,16 @@ const ContactUs = ({ contactuspagecontent }) => {
         )
     }
 
-    const formDefault = {
-        agree: false,
-        contactType: 'By Phone',
-    };
-
-    const { register, handleSubmit, errors } = useForm(formDefault);
+    const { register, handleSubmit, errors } = useForm({
+        defaultValues: {
+            agree: false,
+            contactType: 'By Phone',
+        }
+    
+    });
     
     const onSubmit = (data) => {
         const output = JSON.stringify(data);
-        console.log(output);
         alert(output);
         console.log(data);
     }
@@ -38,8 +38,8 @@ const ContactUs = ({ contactuspagecontent }) => {
             <div className="row section-overlay pt-4 pb-3 ml-5 mr-5">
                 <div className="container">
                     <div className="row row-content">
-                        <div className="col-md-10 mx-auto">
-                            <form className="form">
+                        <div className="App col-md-10 mx-auto">
+                            <form className="form App" onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group row">
                                     <div className="col-12 offset-md-1">
                                         {errors.firstName && <p>First Name Must Be Between 1 And 15 Characters.</p>}
@@ -113,9 +113,7 @@ const ContactUs = ({ contactuspagecontent }) => {
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-md-10 offset-md-2 mx-auto mt-3">
-                                        <button onClick={handleSubmit(onSubmit)}>
-                                            Submit
-                                        </button>
+                                        <input type="submit" className="submitbutton" />
                                     </div>
                                 </div>
                             </form>
@@ -129,7 +127,7 @@ const ContactUs = ({ contactuspagecontent }) => {
     return (
         <div id="contactUs">
             <div className="row contact-image-1 image-section">
-                <div className="row section-overlay2 pt-4 ml-4 mr-4">
+                <div className="row section-overlay2 pt-4 ml-4 mr-4">                    
                     <ContactUsHeading />
                     <ContactUsForm />
                 </div>
