@@ -1,0 +1,12 @@
+#order {
+    .order-image-1 {
+        background-image: linear-gradient(to top, $blackTransImage, $blackTransImage), url(../images/5.jpg);
+        background-position: 65%;
+    }
+    
+    .imgtag {
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+    }
+}
