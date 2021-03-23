@@ -1,6 +1,6 @@
 #order {
     .order-image-1 {
-        background-image: linear-gradient(to top, $blackTransImage, $blackTransImage), url(../images/5.jpg);
+        background-image: linear-gradient(to top, $blackTransImage, $blackTransImage), url(../images/4.jpg);
         background-position: 65%;
     }
     
@@ -8,5 +8,14 @@
         width: 100%;
         max-width: 550px;
         height: auto;
+    }
+
+    .order-overlay {
+        background: $darkGrayTrans;
+        color: $brightGray;
+        left: 0;
+        text-align: center;
+        border: 1px $grayTrans solid;
+        box-shadow: 1px 1px 4px $midGray;
     }
 }
