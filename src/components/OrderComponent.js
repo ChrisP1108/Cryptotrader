@@ -2,7 +2,19 @@ import React from 'react'
 
 const Order = () => {
     
-    const OrderContent = () => {
+    const OrderList = () => {
+        return (
+            <h5>Product List</h5>
+        )
+    }
+    
+    const OrderSelected = () => {
+        return (
+            <h5>Product Selected</h5>
+        )
+    }
+
+    const OrderLayout = () => {
         return (
             <div className="row section-overlay pt-4 pb-4">
                 <div className="col">
@@ -12,11 +24,17 @@ const Order = () => {
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-4 order-overlay my-auto mx-auto">
-                            <h1>Select Product</h1>
+                        <div className="col-lg-4 order-overlay my-auto mx-auto pt-2">
+                            <h2>Click Below To Add To Cart</h2>
+                            <div className="mt-5">
+                                <OrderList />
+                            </div>
                         </div>
-                        <div className="col-4 order-overlay my-auto mx-auto">
-                            <h1>Product Cart</h1>
+                        <div className="col-lg-4 order-overlay my-auto mx-auto mt-3 mt-lg-0 pt-2">
+                            <h2>Product Cart</h2>
+                            <div className="mt-5">
+                                <OrderSelected />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -27,7 +45,7 @@ const Order = () => {
     return (
         <div id="order">
             <div className="row order-image-1 image-section">
-                <OrderContent />
+                <OrderLayout />
             </div>
         </div>
     )
