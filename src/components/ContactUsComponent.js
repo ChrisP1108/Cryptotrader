@@ -19,7 +19,7 @@ const ContactUs = ({ contactuspagecontent }) => {
         )
     }
 
-    const { register, handleSubmit, errors } = useForm({
+    const { register, handleSubmit } = useForm({
         defaultValues: {
             agree: false,
             contactType: 'By Phone',
@@ -28,6 +28,10 @@ const ContactUs = ({ contactuspagecontent }) => {
     });
     
     const onSubmit = (data) => {
+        if (data.firstName === '' || data.lastName === '' || data.phoneNum === '' || data.email === '' || data.feedback === '') {
+            alert('Please Enter In All Fields');
+            return;
+        }
         const output = JSON.stringify(data);
         alert(output);
         console.log(data);
@@ -41,43 +45,31 @@ const ContactUs = ({ contactuspagecontent }) => {
                         <div className="App col-md-10 mx-auto">
                             <form className="form App" onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group row">
-                                    <div className="col-12 offset-md-1">
-                                        {errors.firstName && <p>First Name Must Be Between 1 And 15 Characters.</p>}
-                                    </div>
                                     <label htmlFor="firstName" className="col-md-2">First Name</label>
                                     <input type="text" id="firstName" className ="col-10 mx-auto form-control" name="firstName"
                                         placeholder="First Name"
-                                        ref={register({required: true, minLength: 1, maxLength: 20})}
+                                        ref={register}
                                     />                                   
                                 </div>
                                 <div className="form-group row">
-                                    <div className="col-12 mt-3 offset-md-1">
-                                        {errors.lastName && <p>Last Name Must Be Between 1 And 15 Characters.</p>}
-                                    </div> 
                                     <label htmlFor="lastName" className="col-md-2">Last Name</label>
                                     <input type="text" id="lastName" className ="col-10 mx-auto form-control" name="lastName"
                                         placeholder="Last Name"
-                                        ref={register({required: true, minLength: 1, maxLength: 20})} 
+                                        ref={register} 
                                     />                      
                                 </div>
                                 <div className="form-group row">
-                                    <div className="col-12 mt-3 offset-md-1">
-                                        {errors.phoneNum && <p>Phone Number Must Be 10 Characters Long.</p>}
-                                    </div> 
                                     <label htmlFor="phoneNum" className="col-md-2">Phone</label>
                                     <input type="tel" id="phoneNum" className ="col-10 mx-auto form-control" name="phoneNum"
                                         placeholder="Phone number"
-                                        ref={register({required: true, minLength: 10, maxLength: 10})}
+                                        ref={register}
                                     />
                                 </div>
                                 <div className="form-group row">
-                                    <div className="col-12 mt-3 offset-md-1">
-                                        {errors.email && <p>Enter A Valid Email Address.</p>}
-                                    </div> 
                                     <label htmlFor="email" className="col-md-2">Email</label>
                                     <input type="text" id="email" className ="col-10 mx-auto form-control mb-3" name="email"
                                         placeholder="Email"
-                                        ref={register({required: true, pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i} })}
+                                        ref={register}
                                     />
                                 </div>
                                 <div className="form-group row">
@@ -102,13 +94,10 @@ const ContactUs = ({ contactuspagecontent }) => {
                                     </div>
                                 </div>
                                 <div className="form-group row">
-                                    <div className="col-12 mt-3 offset-md-1">
-                                        {errors.feedback && <p>Enter FeedBack.</p>}
-                                    </div> 
                                     <label htmlFor="feedback" className="col-md-2">Feedback</label>
                                         <textarea id="feedback" className ="col-10 mx-auto form-control" name="feedback"
                                             rows="12"
-                                            ref={register({required: true, minLength: 1, maxLength: 1000})}
+                                            ref={register}
                                         />
                                 </div>
                                 <div className="form-group row">
