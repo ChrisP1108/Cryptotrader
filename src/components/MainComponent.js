@@ -21,7 +21,8 @@ const Main = () => {
         homePageContent: HOMEPAGECONTENTS,
         softwarePageContent: SOFTWAREPAGECONTENTS,
         aboutPageContent: ABOUTPAGECONTENTS,
-        contactUsPageContent: CONTACTPAGECONTENTS
+        contactUsPageContent: CONTACTPAGECONTENTS,
+        orderPageContent: ORDERPAGECONTENTS
     });
 
     return (
@@ -34,7 +35,7 @@ const Main = () => {
                         <Route id="2" exact path='/software' render={() => <Software softwarepagecontent={content.softwarePageContent[0]} />} />
                         <Route id="3" exact path='/about' render={() => <About aboutpagecontent={content.aboutPageContent[0]} />} />
                         <Route id="4" exact path='/contactus' render={() => <ContactUs contactuspagecontent={content.contactUsPageContent[0]} />} />
-                        <Route id="5" exact path='/order' render={() => <Order />} />
+                        <Route id="5" exact path='/order' render={() => <Order orderpagecontent ={content.orderPageContent} />} />
                         <Redirect to='/home' />
                     </Switch>
                 </CSSTransition>
