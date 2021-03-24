@@ -11,24 +11,43 @@ const Order = ({ orderpagecontent }) => {
         }
         setCartTotal(cartTotal + item.price);
         setCartItems([].concat(cartItems, item))
-        console.log(cartItems);
+    }
+
+    const removeItem = (item) => {
+        setCartTotal(cartTotal - item.price);
+        setCartItems(cartItems.filter(list => list !== item));
     }
     
     const orderlist = orderpagecontent.map(list => {
         return (
             <div key={list.id} className="list-overlay" onClick={() => addItem(list)}>
-                <h5>{list.title}</h5>
+                <h5>{list.title} - ${list.price}</h5>
             </div>
         )
     });
 
     const cartlist = cartItems.map(cartitem => {
         return (
-            <div key={cartitem.id} className="mt-5">
-                <h5>{cartitem.title}</h5>
+            <div key={cartitem.id} className="mx-auto row mt-2">
+                <div className="col-10 cart-overlay">
+                    <h5>{cartitem.title}</h5>
+                </div>  
+                <div className="col-1 offset-1 item-select mx-auto my-auto" onClick={() => removeItem(cartitem)}> 
+                    <i className="fa fa-times-circle fa-lg"></i>
+                </div>           
             </div>
         )
     })
+
+    const checkout = () => {
+        if (cartTotal === 0) {
+            alert(`You Have Not Selected Any Items For Purchase.`);
+            return;
+        }
+        alert(`Your purchase total is: $${cartTotal}`);
+        setCartItems([]);
+        setCartTotal(0);
+    }
 
     const OrderTotal = () => {
         return(
@@ -39,9 +58,7 @@ const Order = ({ orderpagecontent }) => {
     const OrderSelected = () => {
         return (
             <>
-                <div>
-                    <h5>{cartlist}</h5>
-                </div>
+                <h5>{cartlist}</h5>
                 <div className="mt-5">
                     <OrderTotal />
                 </div>
@@ -51,7 +68,7 @@ const Order = ({ orderpagecontent }) => {
 
     const OrderLayout = () => {
         return (
-            <div className="row section-overlay pt-4 pb-4">
+            <div className="row section-overlay pt-4 pb-4 ml-4 mr-4">
                 <div className="col">
                     <div className="row">
                         <div className="col-12 mx-auto">
@@ -59,17 +76,22 @@ const Order = ({ orderpagecontent }) => {
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-lg-4 order-overlay mx-auto pt-2">
+                        <div className="col-lg-4 order-overlay mx-auto pt-3">
                             <h2>Click Items Below To Add To Cart</h2>
                             <div className="mt-5">
                                 {orderlist}
                             </div>
                         </div>
-                        <div className="col-lg-4 order-overlay mx-auto mt-3 mt-lg-0 pt-2">
+                        <div className="col-lg-4 order-overlay mx-auto mt-5 mt-lg-0 pt-3">
                             <h2>Product Cart</h2>
-                            <div className="mt-5">
-                                {cartItems === '' ? <h5>No Items Selected</h5> : <OrderSelected />}
+                            <div className="mt-5 mb-3">
+                                {cartTotal === 0 ? <h4 className="pt-5">No Items Selected</h4> : <OrderSelected />}
                             </div>
+                        </div>
+                    </div>
+                    <div className="row mt-5">
+                        <div className="col-10 col-md-4 mx-auto mt-2">
+                            <button className="btn-block btn-lg" onClick={checkout}>Checkout</button>
                         </div>
                     </div>
                 </div>

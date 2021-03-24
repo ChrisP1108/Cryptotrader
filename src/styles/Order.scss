@@ -13,7 +13,6 @@
     .order-overlay {
         background: $darkGrayTrans;
         color: $brightGray;
-        left: 0;
         text-align: center;
         border: 1px $grayTrans solid;
         box-shadow: 1px 1px 4px $midGray;
@@ -25,7 +24,6 @@
         text-align: center;
         border: 1px $grayTrans solid;
         box-shadow: 1px 1px 4px $midGray;
-        width: 100%;
         margin-top: 2rem;
         margin-bottom: 2rem;
         padding-top: .5rem;
@@ -36,4 +34,29 @@
         background: $darkRed;
         cursor: pointer;
     }
+
+    .cart-overlay {
+        background: $darkRed;
+        color: $brightGray;
+        text-align: center;
+        border: 1px $grayTrans solid;
+        box-shadow: 1px 1px 4px $midGray;
+        padding-top: .5rem;
+        transition: .25s ease-in-out;
+    }
+
+    .cart-crossout {
+        background: $darkGray;
+        color: $brightGray;
+        text-align: center;
+        border: 1px $grayTrans solid;
+        box-shadow: 1px 1px 4px $midGray;
+        padding-top: .5rem;
+        transition: .25s ease-in-out;
+    }
+
+    .item-select {
+        cursor: pointer;
+    }
+
 }
