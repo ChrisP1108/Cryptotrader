@@ -10,7 +10,7 @@ const Order = ({ orderpagecontent }) => {
             return;
         }
         setCartTotal(cartTotal + item.price);
-        setCartItems([].concat(cartItems, item))
+        setCartItems([...cartItems, item]);
     }
 
     const removeItem = (item) => {

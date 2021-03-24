@@ -28,18 +28,14 @@ const Main = () => {
     return (
         <>
             <Header />
-            <TransitionGroup>
-                <CSSTransition key={Route.id} classNames="page" timeout={300}>
-                    <Switch>
-                        <Route id="1" path='/home' render={() => <Home homepagecontent={content.homePageContent} />} />
-                        <Route id="2" exact path='/software' render={() => <Software softwarepagecontent={content.softwarePageContent[0]} />} />
-                        <Route id="3" exact path='/about' render={() => <About aboutpagecontent={content.aboutPageContent[0]} />} />
-                        <Route id="4" exact path='/contactus' render={() => <ContactUs contactuspagecontent={content.contactUsPageContent[0]} />} />
-                        <Route id="5" exact path='/order' render={() => <Order orderpagecontent ={content.orderPageContent} />} />
-                        <Redirect to='/home' />
-                    </Switch>
-                </CSSTransition>
-            </TransitionGroup>    
+                <Switch>
+                    <Route id="1" path='/home' render={() => <Home homepagecontent={content.homePageContent} />} />
+                    <Route id="2" exact path='/software' render={() => <Software softwarepagecontent={content.softwarePageContent[0]} />} />
+                    <Route id="3" exact path='/about' render={() => <About aboutpagecontent={content.aboutPageContent[0]} />} />
+                    <Route id="4" exact path='/contactus' render={() => <ContactUs contactuspagecontent={content.contactUsPageContent[0]} />} />
+                    <Route id="5" exact path='/order' render={() => <Order orderpagecontent ={content.orderPageContent} />} />
+                    <Redirect to='/home' />
+                </Switch>
             <Footer />
         </>
     )
