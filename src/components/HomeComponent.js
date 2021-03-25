@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const Home = ({ homepagecontent }) => {
@@ -22,7 +21,7 @@ const Home = ({ homepagecontent }) => {
     });
     
     return (
-        <div id="home">
+        <div id="home" className="fade-in">
             <div className="row home-image-1 image-section">
                 {homesections}
             </div>

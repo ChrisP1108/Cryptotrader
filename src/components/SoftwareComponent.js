@@ -25,7 +25,7 @@ const Software = ({ softwarepagecontent }) => {
     }
     
     return (
-        <div id="software">
+        <div id="software" className="fade-in">
             <div className="row software-image-1 image-section">
                 <SoftwareContent />
             </div>

@@ -114,7 +114,7 @@ const ContactUs = ({ contactuspagecontent }) => {
     }
     
     return (
-        <div id="contactUs">
+        <div id="contactUs" className="fade-in">
             <div className="row contact-image-1 image-section">
                 <div className="row section-overlay2 pt-4 ml-4 mr-4">                    
                     <ContactUsHeading />
