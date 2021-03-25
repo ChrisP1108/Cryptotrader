@@ -17,7 +17,7 @@ const Software = ({ softwarepagecontent }) => {
                     <h5 className="mt-5">{softwarepagecontent.content2}</h5>
                     <h5 className="mt-5">{softwarepagecontent.content3}</h5>
                     <Link to={softwarepagecontent.link}>
-                        <button className="mt-5">{softwarepagecontent.button}</button>
+                        <button className="mt-5 btn-lg">{softwarepagecontent.button}</button>
                     </Link>  
                 </div>
             </div>

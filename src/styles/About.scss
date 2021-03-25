@@ -1,14 +1,14 @@
 #about {
-  .about-image-1 {
-      background-image: linear-gradient(to top, $grayRedTrans, $grayRedTrans), url(../images/2.jpg);
-      background-position: 50%;
-  }
-  
-  .imgtag {
-    width: 100%;
-    max-width: 992px;
-    height: auto;
-}
+    .about-image-1 {
+        background-image: linear-gradient(to top, $blackTransImage, $blackTransImage), url(../images/7.jpg);
+        background-position: 50%;
+    }
+
+    .imgtag {
+        width: 100%;
+        max-width: 992px;
+        height: auto;
+    }
 
 h1 {
     font-size: 3rem;

@@ -68,21 +68,21 @@ const Order = ({ orderpagecontent }) => {
 
     const OrderLayout = () => {
         return (
-            <div className="row section-overlay pt-4 pb-4 ml-4 mr-4">
+            <div className="row section-overlay pt-4 pb-4 ml-5 mr-5">
                 <div className="col">
                     <div className="row">
-                        <div className="col-12 mx-auto">
+                        <div className="col-10 mx-auto">
                             <h1>Select From Our Products For Pricing</h1>
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-lg-4 order-overlay mx-auto pt-3">
+                        <div className=" col-10 col-lg-4 order-overlay mx-auto pt-3">
                             <h2>Click Items Below To Add To Cart</h2>
                             <div className="mt-5">
                                 {orderlist}
                             </div>
                         </div>
-                        <div className="col-lg-4 order-overlay mx-auto mt-5 mt-lg-0 pt-3">
+                        <div className="col-10 col-lg-4 order-overlay mx-auto mt-5 mt-lg-0 pt-3">
                             <h2>Product Cart</h2>
                             <div className="mt-5 mb-3">
                                 {cartTotal === 0 ? <h4 className="pt-5">No Items Selected</h4> : <OrderSelected />}
@@ -90,7 +90,7 @@ const Order = ({ orderpagecontent }) => {
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-10 col-md-4 mx-auto mt-2">
+                        <div className="col-10 col-lg-4 mx-auto mt-2">
                             <button className="btn-block btn-lg" onClick={checkout}>Checkout</button>
                         </div>
                     </div>
