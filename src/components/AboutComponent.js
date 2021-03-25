@@ -31,7 +31,7 @@ const About = ({ aboutpagecontent }) => {
     }
     
     return (
-        <div id="about">
+        <div id="about" className="fade-in">
             <div className="row about-image-1 image-section">
                 <AboutContent />
             </div>

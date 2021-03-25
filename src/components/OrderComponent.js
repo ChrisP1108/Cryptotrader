@@ -100,7 +100,7 @@ const Order = ({ orderpagecontent }) => {
     }
         
     return (
-        <div id="order">
+        <div id="order" className="fade-in">
             <div className="row order-image-1 image-section">
                 <OrderLayout />
             </div>
