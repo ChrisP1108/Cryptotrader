@@ -39,11 +39,11 @@ const ContactUs = ({ contactuspagecontent }) => {
 
     const ContactUsForm = () => {
         return (
-            <div className="row section-overlay pt-4 pb-3 ml-5 mr-5">
+            <div className="row form-overlay pt-4 pb-3 ml-5 mr-5">
                 <div className="container">
                     <div className="row row-content">
                         <div className="App col-md-10 mx-auto">
-                            <form className="form App" onSubmit={handleSubmit(onSubmit)}>
+                            <form className="form App mt-2" onSubmit={handleSubmit(onSubmit)}>
                                 <div className="form-group row">
                                     <label htmlFor="firstName" className="col-md-2">First Name</label>
                                     <input type="text" id="firstName" className ="col-10 mx-auto form-control" name="firstName"
@@ -102,7 +102,9 @@ const ContactUs = ({ contactuspagecontent }) => {
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-md-10 offset-md-2 mx-auto mt-3">
-                                        <input type="submit" className="submitbutton" />
+                                        <button type="submit" className="btn-lg">
+                                            Submit
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -116,7 +118,7 @@ const ContactUs = ({ contactuspagecontent }) => {
     return (
         <div id="contactUs" className="fade-in">
             <div className="row contact-image-1 image-section">
-                <div className="row section-overlay2 pt-4 ml-4 mr-4">                    
+                <div className="row section-overlay2 pt-4 ml-4 mr-5 ml-5">                    
                     <ContactUsHeading />
                     <ContactUsForm />
                 </div>

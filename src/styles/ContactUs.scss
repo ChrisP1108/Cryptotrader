@@ -1,7 +1,18 @@
 #contactUs {
     .contact-image-1 {
-        background-image: linear-gradient(to top, $blackTransImage, $blackTransImage), url(../images/12.jpg);
+        background-image: linear-gradient(to top, $blackTransImage, $blackTransImage), url(../images/2.jpg);
         background-position: 65%;
+    }
+
+    .form-overlay {
+        background: $darkRedFormTrans;
+        color: $brightGray;
+        margin: 6rem;
+        left: 0;
+        text-align: center;
+        border: 1px $grayTrans solid;
+        box-shadow: 1px 1px 4px $midGray;
+        width: 100%;
     }
     
     .imgtag {
