@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { State } from '../state/State';
 
-const About = ({ aboutpagecontent }) => {
+const About = () => {
+
+    const aboutimport = useContext(State); 
+    const aboutpagecontent = aboutimport.aboutpagecontent[0];
 
     const AboutContent = () => {
         return (

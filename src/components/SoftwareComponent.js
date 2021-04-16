@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { State } from '../state/State';
 
-const Software = ({ softwarepagecontent }) => {
+const Software = () => {
+
+    const softwareimport = useContext(State); 
+    const softwarepagecontent = softwareimport.softwarepagecontent[0];
 
     const SoftwareContent = () => {
         return (

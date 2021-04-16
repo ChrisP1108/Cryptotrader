@@ -5,14 +5,18 @@ import { Provider } from 'react-redux';
 // import { ConfigureStore } from './redux/configureStore';
 import './App.css';
 import './styles/Styles.scss'
+import { State } from './state/State';
+import { CONTENT } from './state/State';
 
 // const store = ConfigureStore();
 
 const App = () => {
   return (
-    <BrowserRouter>
-        <Main />
-    </BrowserRouter>
+    <State.Provider value={CONTENT}>
+      <BrowserRouter>
+          <Main />
+      </BrowserRouter>
+    </State.Provider>
   );
 }
 

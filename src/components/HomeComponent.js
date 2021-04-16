@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { State } from '../state/State';
 
-const Home = ({ homepagecontent }) => {
+const Home = () => {
+
+    const homeimport = useContext(State);
+    const homepagecontent = homeimport.homepagecontent;
 
     const homesections = homepagecontent.map(section => {
         return (            

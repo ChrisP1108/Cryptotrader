@@ -5,35 +5,20 @@ import Software from './SoftwareComponent';
 import About from './AboutComponent';
 import ContactUs from './ContactUsComponent';
 import Order from './OrderComponent';
-import { HOMEPAGECONTENTS } from '../shared/HomePageContents';
-import { SOFTWAREPAGECONTENTS } from '../shared/SoftwarePageContents';
-import { ABOUTPAGECONTENTS } from '../shared/AboutPageContents';
-import { CONTACTPAGECONTENTS } from '../shared/ContactPageContents'
-import { ORDERPAGECONTENTS } from '../shared/OrderPageContents';
-import { useState } from 'react';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 const Main = () => {
-
-    const [content, setContent] = useState ({
-        homePageContent: HOMEPAGECONTENTS,
-        softwarePageContent: SOFTWAREPAGECONTENTS,
-        aboutPageContent: ABOUTPAGECONTENTS,
-        contactUsPageContent: CONTACTPAGECONTENTS,
-        orderPageContent: ORDERPAGECONTENTS
-    });
 
     return (
         <>
             <Header />
-                <Switch>
-                    <Route path='/home' render={() => <Home homepagecontent={content.homePageContent} />} />
-                    <Route exact path='/software' render={() => <Software softwarepagecontent={content.softwarePageContent[0]} />} />
-                    <Route exact path='/about' render={() => <About aboutpagecontent={content.aboutPageContent[0]} />} />
-                    <Route exact path='/contactus' render={() => <ContactUs contactuspagecontent={content.contactUsPageContent[0]} />} />
-                    <Route exact path='/order' render={() => <Order orderpagecontent ={content.orderPageContent} />} />
-                    <Redirect to='/home' />
+                <Switch>               
+                    <Route path='/home'><Home /></Route>
+                    <Route exact path='/software'><Software /></Route>
+                    <Route exact path='/about'><About /></Route>
+                    <Route exact path='/contactus'><ContactUs /></Route>
+                    <Route exact path='/order'><Order /></Route>
+                    <Redirect to='/home' />                   
                 </Switch>
             <Footer />
         </>

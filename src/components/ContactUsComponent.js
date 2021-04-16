@@ -1,7 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import { useContext } from 'react';
+import { State } from '../state/State';
 
-const ContactUs = ({ contactuspagecontent }) => {
+const ContactUs = () => {
+
+    const contactusimport = useContext(State); 
+    const contactuspagecontent = contactusimport.contactuspagecontent[0];
 
     const ContactUsHeading = () => {
         return (

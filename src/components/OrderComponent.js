@@ -1,6 +1,11 @@
 import { useState } from 'react';
+import { useContext } from 'react';
+import { State } from '../state/State';
 
-const Order = ({ orderpagecontent }) => {
+const Order = () => {
+
+    const orderimport = useContext(State);
+    const orderpagecontent = orderimport.orderpagecontent;
 
     const [cartItems, setCartItems] = useState([]);
     const [cartTotal, setCartTotal] = useState(0);
